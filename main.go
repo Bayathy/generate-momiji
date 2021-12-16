@@ -1,11 +1,16 @@
 package main
 
 import (
+	"image"
 	_ "image"
 	"image/color"
-	_ "math/rand"
 	_ "image/png"
+	"math/rand"
+	_ "math/rand"
 	_ "os"
+	"time"
+
+	"golang.org/x/text/cases"
 )
 
 var (
@@ -39,5 +44,31 @@ var (
 )
 
 func main() {
-
+	rand.Seed(time.Now().Unix())
+	img := image.NewNRGBA(image.Rect(0,0,width,height))
+	for x := 0; x < width; x++ {
+		for y := 0; y < height; y++{
+			srand := rand.Intn(3)
+			switch rand.Intn(3){
+			case 0:
+				switch srand{
+					case 0:
+					case 1:
+					case 2:
+				}		
+			case 1:
+				switch srand{
+					case 0:
+					case 1:
+					case 2:
+				}
+			case 2:
+				switch srand{
+					case 0:
+					case 1:
+					case 2:
+				}
+		 }		
+		}
+	}
 }
