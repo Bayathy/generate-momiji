@@ -28,7 +28,11 @@ var (
 		//#dec443
 		//#d4aa6d
 	}
-	brown = colorpicker{}
+	brown = colorpicker{
+		//#9a7b55
+		//#da8b40
+		//#db8468
+	}
 )
 
 func main() {
