@@ -14,14 +14,15 @@ import (
 )
 
 var (
-	width  = 60
-	height = 40
+	width  = 600
+	height = 400
 )
 
 type colorpicker struct {
 	color1 color.Color
 	color2 color.Color
 	color3 color.Color
+	color4 color.Color
 }
 
 var (
@@ -32,6 +33,9 @@ var (
 		color2: color.RGBA{230, 20, 14, 255},
 		//#e66352
 		color3: color.RGBA{230, 99, 82, 255},
+
+		//color4: color.RGBA{230, 99, 82, 255},
+		color4: color.RGBA{255, 255, 255, 255},
 	}
 
 	yellow = colorpicker{
@@ -41,6 +45,7 @@ var (
 		color2: color.RGBA{222, 196, 67, 255},
 		//#d4aa6d
 		color3: color.RGBA{212, 170, 109, 255},
+		color4: color.RGBA{255, 255, 255, 255},
 	}
 	brown = colorpicker{
 		//#9a7b55
@@ -49,15 +54,17 @@ var (
 		color2: color.RGBA{218, 139, 64, 255},
 		//#db8468
 		color3: color.RGBA{208, 132, 104, 255},
+		color4: color.RGBA{255, 255, 255, 255},
 	}
 )
 
 func main() {
 	rand.Seed(time.Now().Unix())
+
 	img := image.NewNRGBA(image.Rect(0, 0, width, height))
 	for x := 0; x < width; x++ {
 		for y := 0; y < height; y++ {
-			srand := rand.Intn(3)
+			srand := rand.Intn(4)
 			switch rand.Intn(3) {
 			case 0:
 				switch srand {
@@ -67,15 +74,19 @@ func main() {
 					img.Set(x, y, red.color2)
 				case 2:
 					img.Set(x, y, red.color3)
+				case 3:
+					img.Set(x, y, red.color4)
 				}
 			case 1:
 				switch srand {
 				case 0:
 					img.Set(x, y, yellow.color1)
 				case 1:
-					img.Set(x, y, red.color2)
+					img.Set(x, y, yellow.color2)
 				case 2:
-					img.Set(x, y, red.color3)
+					img.Set(x, y, yellow.color3)
+				case 3:
+					img.Set(x, y, yellow.color4)
 				}
 			case 2:
 				switch srand {
@@ -85,6 +96,8 @@ func main() {
 					img.Set(x, y, brown.color2)
 				case 2:
 					img.Set(x, y, brown.color3)
+				case 3:
+					img.Set(x, y, brown.color4)
 				}
 			}
 		}
