@@ -24,8 +24,9 @@ var (
 
 	}
 	yellow = colorpicker{
-		//
-
+		//#f69e2c
+		//#dec443
+		//#d4aa6d
 	}
 	brown = colorpicker{}
 )
