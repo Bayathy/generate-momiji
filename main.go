@@ -3,6 +3,9 @@ package main
 import (
 	_ "image"
 	"image/color"
+	_ "math/rand"
+	_ "image/png"
+	_ "os"
 )
 
 var (
