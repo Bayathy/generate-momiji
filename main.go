@@ -17,9 +17,17 @@ type colorpicker struct {
 }
 
 var (
-	red    = colorpicker{}
-	yellow = colorpicker{}
-	brown  = colorpicker{}
+	red = colorpicker{
+		//#e2471d
+		//#e6140e
+		//#e66352
+
+	}
+	yellow = colorpicker{
+		//
+
+	}
+	brown = colorpicker{}
 )
 
 func main() {
