@@ -4,13 +4,13 @@ import (
 	"image"
 	_ "image"
 	"image/color"
+	"image/png"
 	_ "image/png"
 	"math/rand"
 	_ "math/rand"
+	"os"
 	_ "os"
 	"time"
-
-	"golang.org/x/text/cases"
 )
 
 var (
@@ -53,22 +53,36 @@ func main() {
 			case 0:
 				switch srand{
 					case 0:
+						img.Set(x,y,red.color1)
 					case 1:
+						img.Set(x,y,red.color2)
 					case 2:
+						img.Set(x,y,red.color3)
 				}		
 			case 1:
 				switch srand{
 					case 0:
+						img.Set(x,y,yellow.color1)
 					case 1:
+						img.Set(x,y,red.color2)
 					case 2:
+						img.Set(x,y,red.color3)
 				}
 			case 2:
 				switch srand{
 					case 0:
+						img.Set(x,y,brown.color1)
 					case 1:
+						img.Set(x,y,brown.color2)
 					case 2:
+						img.Set(x,y,brown.color3)
 				}
-		 }		
+			}		
 		}
+
+		
+		f, _ := os.Create("./image.png")
+		png.Encode(f,img)
+		f.Close()
 	}
 }
